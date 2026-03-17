@@ -1,0 +1,54 @@
+{
+  "_comment": "Copy this to ~/.claude/settings.json and fill in MCP server details. Run install.sh to do this automatically.",
+  "model": "claude-sonnet-4-5",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/em-dash-guard.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/model-routing-enforcer.py"
+          }
+        ]
+      }
+    ]
+  },
+  "mcpServers": {
+    "mcp-atlassian": {
+      "_comment": "See https://github.com/sooperset/mcp-atlassian for setup",
+      "command": "uvx",
+      "args": ["mcp-atlassian"],
+      "env": {
+        "JIRA_SERVER_URL": "https://YOUR_ORG.atlassian.net",
+        "JIRA_USERNAME": "your@email.com",
+        "JIRA_API_TOKEN": "YOUR_JIRA_API_TOKEN",
+        "CONFLUENCE_SERVER_URL": "https://YOUR_ORG.atlassian.net/wiki",
+        "CONFLUENCE_USERNAME": "your@email.com",
+        "CONFLUENCE_API_TOKEN": "YOUR_CONFLUENCE_API_TOKEN"
+      }
+    },
+    "github": {
+      "_comment": "See https://github.com/github/github-mcp-server for setup",
+      "command": "npx",
+      "args": ["-y", "@github/mcp-server"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_TOKEN"
+      }
+    },
+    "figma": {
+      "_comment": "See https://github.com/GLips/Figma-Context-MCP for setup",
+      "command": "npx",
+      "args": ["-y", "figma-developer-mcp", "--figma-api-key", "YOUR_FIGMA_API_KEY"]
+    }
+  }
+}
