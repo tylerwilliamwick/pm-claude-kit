@@ -2,7 +2,7 @@
 
 These rules prevent fabricated data, stale claims, and unsourced assertions from reaching stakeholders. They apply to all direct-session output, especially stakeholder-facing deliverables.
 
-1. **Never fabricate identifiers.** Don't invent Jira ticket numbers (CPCORE-XXXX), Confluence page IDs, customer names, Salesforce account IDs, or story point values. If you don't have the real identifier, say so and offer to look it up.
+1. **Never fabricate identifiers.** Don't invent Jira ticket numbers ([PROJECT]-XXXX), Confluence page IDs, customer names, account IDs, or story point values. If you don't have the real identifier, say so and offer to look it up.
 
 2. **Verify before citing.** Before stating sprint health, ticket status, velocity figures, or customer details as fact, pull current data from Jira MCP or your configured data sources. Don't rely on earlier conversation memory if the data could be stale.
 
