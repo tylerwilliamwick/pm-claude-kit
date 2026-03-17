@@ -10,34 +10,34 @@ Specify the mode in the command: `/doc-update [mode] [topic]`
 
 #### `/doc-update confluence [topic]`
 Update a Confluence page:
-1. Search Confluence via Atlassian MCP for the existing page about [topic]
+1. If Confluence MCP is available: search for the existing page about [topic] via Atlassian MCP
 2. If found: read the current content, identify what needs updating, draft the changes
 3. If not found: ask which space and parent page to create under
-4. Use updateConfluencePage or createConfluencePage via Atlassian MCP
+4. If Confluence MCP is available: use updateConfluencePage or createConfluencePage; otherwise update your docs system directly
 5. Confirm the update with a link to the page
 
 #### `/doc-update kb [topic]`
 Update a knowledge base article:
-1. Search Confluence for KB articles about [topic]
+1. If Confluence MCP is available: search for KB articles about [topic]; otherwise check your docs system directly
 2. Pull current content and identify gaps or stale information
 3. Draft updates with current data from Jira, GitHub, or conversation context
-4. Update via Atlassian MCP
+4. If Confluence MCP is available: update via Atlassian MCP; otherwise update your docs system directly
 5. If no KB article exists, offer to create one
 
 #### `/doc-update adr [decision]`
 Write an Architecture Decision Record:
 1. Collect: context, decision, alternatives considered, consequences
 2. Format as an ADR (title, date, status, context, decision, consequences)
-3. Write to Confluence in the appropriate space
-4. Update your configured docs destination (Confluence via MCP, or your local docs folder) with a copy
-5. Offer to create a Jira ticket to track implementation if applicable
+3. If Confluence MCP is available: write to Confluence in the appropriate space; otherwise write to your local docs folder
+4. Keep a copy in your local docs folder regardless
+5. Offer to create a ticket to track implementation if applicable
 
 #### `/doc-update runbook [process]`
 Update an operational runbook:
-1. Search Confluence for the existing runbook about [process]
+1. If Confluence MCP is available: search for the existing runbook about [process]; otherwise check your docs system directly
 2. If found: read current steps, identify what changed, update
 3. If not found: draft a new runbook with: purpose, prerequisites, step-by-step procedure, troubleshooting, escalation contacts
-4. Update or create via Atlassian MCP
+4. If Confluence MCP is available: update or create via Atlassian MCP; otherwise update your docs system directly
 5. Flag if the runbook references outdated tools or procedures
 
 #### `/doc-update local [topic]`

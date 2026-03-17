@@ -8,9 +8,10 @@ Trigger on "build", "commit and push", "open a PR", "ready for review", "submit 
    - Python: pytest
    - Java/Maven: mvn test -pl [module]
    - If no test runner detected: skip and note it
-2. If tests pass: stage all changes, commit with a PM-legible message referencing the Jira ticket key
+2. If tests pass: stage all changes, commit with a clear, descriptive commit message referencing the relevant ticket or issue number
 3. Push the branch
-4. Open a draft PR on GitHub — description includes: what changed, why, Jira ticket link
-5. Post the PR URL as a comment on the Jira ticket via Atlassian MCP
-6. Transition Jira ticket to "In Review" via Atlassian MCP
-7. Suggest /code-review as the next step
+4. Open a draft PR on GitHub — description includes: what changed, why, ticket or issue reference
+5. If Jira MCP is available, post the PR URL as a comment on the ticket and transition it to "In Review"; otherwise update the ticket manually
+6. Confirm the PR URL in the conversation for the next step
+
+**Next step:** Run /code-review once the PR is open.

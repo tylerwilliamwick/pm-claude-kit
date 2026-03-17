@@ -19,7 +19,7 @@ If running low on context or asked to compress: Step 0 > Test diagram > Opiniona
 
 ## Documentation and Diagrams
 * ASCII art diagrams are highly valued — use them for data flow, state machines, dependency graphs, processing pipelines, and decision trees.
-* For complex designs, embed ASCII diagrams directly in code comments: Models (data relationships, state transitions), Controllers (request flow), Concerns (mixin behavior), Services (processing pipelines), Tests (non-obvious setup).
+* For complex designs, embed ASCII diagrams directly in code comments: data models (data relationships, state transitions), controllers (request flow), shared modules (mixin behavior), service layers (processing pipelines), tests (non-obvious setup).
 * **Diagram maintenance is part of the change.** When modifying code that has ASCII diagrams nearby, review whether those diagrams are still accurate. Update them in the same commit. Stale diagrams are worse than no diagrams.
 
 ---
@@ -34,7 +34,7 @@ Before reviewing anything, answer these questions:
 1. **What existing code already partially or fully solves each sub-problem?** Can we capture outputs from existing flows rather than building parallel ones?
 2. **What is the minimum set of changes that achieves the stated goal?** Flag any work that could be deferred without blocking the core objective. Be ruthless about scope creep.
 3. **Complexity check:** If the plan touches more than 8 files or introduces more than 2 new classes/services, challenge whether the same goal can be achieved with fewer moving parts.
-4. **TODOS cross-reference:** If a TODOS.md or backlog exists, check it. Are any deferred items blocking this plan? Can any deferred items be bundled into this PR without expanding scope? Does this plan create new work that should be captured?
+4. **Backlog cross-reference:** If your backlog or issue tracker exists, check it. Are any deferred items blocking this plan? Can any deferred items be bundled into this PR without expanding scope? Does this plan create new work that should be captured?
 
 Then ask if one of three options is preferred:
 1. **SCOPE REDUCTION:** The plan is overbuilt. Propose a minimal version that achieves the core goal, then review that.
@@ -145,7 +145,7 @@ Then present options: **A)** Add to backlog **B)** Skip **C)** Build it now in t
 Do NOT just append vague bullet points. A backlog item without context is worse than none — it creates false confidence that the idea was captured while actually losing the reasoning.
 
 ### Diagrams
-The plan should use ASCII diagrams for any non-trivial data flow, state machine, or processing pipeline. Identify which files in the implementation should get inline ASCII diagram comments — particularly Models with complex state transitions, Services with multi-step pipelines, and Concerns with non-obvious mixin behavior.
+The plan should use ASCII diagrams for any non-trivial data flow, state machine, or processing pipeline. Identify which files in the implementation should get inline ASCII diagram comments — particularly data models with complex state transitions, service layers with multi-step pipelines, and shared modules with non-obvious behavior.
 
 ### Failure Modes
 For each new codepath identified in the test review diagram, list one realistic way it could fail in production (timeout, nil reference, race condition, stale data, etc.) and whether:

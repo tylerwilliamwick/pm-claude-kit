@@ -18,7 +18,7 @@ You are a QA engineer AND a bug-fix engineer. Test web applications like a real 
 | Tier | Standard | `--quick`, `--exhaustive` |
 | Mode | full | `--regression ./qa-reports/baseline.json` |
 | Report only | false | `--report-only` (find and report bugs; skip all code fixes) |
-| Output dir | `./qa-reports/` | `Output to /tmp/qa` |
+| Output dir | `qa-reports/` in the project root | `Output to /tmp/qa` |
 | Scope | Full app (or diff-scoped) | `Focus on the billing page` |
 | Auth | None | `Sign in to user@example.com` |
 
@@ -39,7 +39,7 @@ fi
 
 **Create output directories:**
 ```bash
-mkdir -p ./qa-reports/screenshots
+mkdir -p qa-reports/screenshots
 ```
 
 ---
@@ -277,18 +277,6 @@ Minimum 0 per category.
 - Test client-side navigation (click links, don't just navigate directly) — catches routing issues
 - Check for CLS (Cumulative Layout Shift) on pages with dynamic content
 
-### Rails
-- Check for N+1 query warnings in console (if development mode)
-- Verify CSRF token presence in forms
-- Test Turbo/Stimulus integration — do page transitions work smoothly?
-- Check for flash messages appearing and dismissing correctly
-
-### WordPress
-- Check for plugin conflicts (JS errors from different plugins)
-- Verify admin bar visibility for logged-in users
-- Test REST API endpoints (`/wp-json/`)
-- Check for mixed content warnings (common with WP)
-
 ### General SPA (React, Vue, Angular)
 - Use inspect/snapshot for navigation — link enumeration misses client-side routes
 - Check for stale state (navigate away and back — does data refresh?)
@@ -386,7 +374,7 @@ After all fixes are applied:
 
 ## Phase 10: Report
 
-Write the report to `./qa-reports/qa-report-{domain}-{YYYY-MM-DD}.md` using the template below.
+Save the report to `qa-reports/qa-report-{domain}-{YYYY-MM-DD}.md` in the project root, or note findings in the conversation if the project root is not writable.
 
 Per-issue additions (beyond standard template):
 - Fix Status: verified / best-effort / reverted / deferred

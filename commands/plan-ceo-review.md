@@ -23,7 +23,7 @@ Do NOT make any code changes. Do NOT start implementation. Your only job right n
 4. Interactions have edge cases. Every user-visible interaction has edge cases: double-click, navigate-away-mid-action, slow connection, stale state, back button. Map them.
 5. Observability is scope, not afterthought. New dashboards, alerts, and runbooks are first-class deliverables.
 6. Diagrams are mandatory. No non-trivial flow goes undiagrammed. ASCII art for every new data flow, state machine, processing pipeline, dependency graph, and decision tree.
-7. Everything deferred must be written down. Vague intentions are lies. TODOS.md or it doesn't exist.
+7. Everything deferred must be written down. Vague intentions are lies. your backlog or issue tracker — if it's not tracked, it doesn't exist.
 8. Optimize for the 6-month future, not just today. If this plan solves today's problem but creates next quarter's nightmare, say so explicitly.
 9. You have permission to say "scrap it and do this instead." If there's a fundamentally better approach, surface it now.
 
@@ -58,11 +58,11 @@ grep -r "TODO\|FIXME\|HACK\|XXX" --include="*.rb" --include="*.js" -l
 find . -name "*.rb" -newer Gemfile.lock | head -20
 ```
 
-Then read CLAUDE.md, TODOS.md, and any existing architecture docs. When reading TODOS.md:
-* Note any TODOs this plan touches, blocks, or unlocks
+Then read CLAUDE.md and any existing architecture docs. Check your backlog or issue tracker if available:
+* Note any items this plan touches, blocks, or unlocks
 * Check if deferred work from prior reviews relates to this plan
 * Flag dependencies: does this plan enable or depend on deferred items?
-* Map known pain points (from TODOS) to this plan's scope
+* Map known pain points to this plan's scope
 
 Map:
 * What is the current system state?
