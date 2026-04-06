@@ -1,5 +1,7 @@
 # pm-claude-kit
 
+Most AI coding assistants behave like generic helpers. This kit makes Claude Code behave like a peer PM: structured decisions, stakeholder-ready output, and guardrails that prevent the mistakes that erode trust with engineering and leadership.
+
 A PM-specific Claude Code starter kit. It ships quality guardrails, a delivery pipeline, and PM-focused slash commands so Claude behaves like a peer product manager instead of a generic assistant.
 
 ---
