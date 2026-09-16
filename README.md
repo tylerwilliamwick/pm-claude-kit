@@ -9,7 +9,7 @@ A PM-specific Claude Code starter kit. It ships quality guardrails, a delivery p
 ## Quick Start
 
 ```bash
-git clone https://github.com/YOUR_ORG/pm-claude-kit.git
+git clone https://github.com/tylerwilliamwick/pm-claude-kit.git
 cd pm-claude-kit
 ./install.sh
 ```
